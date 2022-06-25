@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import data from "../data";
+// import data from "../data";
 
 const SofasScreen = () => {
+  const [sofas, setSofas] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get("/api/sofas");
+      setSofas(result.data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <main>
         <h1>Sofas</h1>
         <div className="sofas">
-          {data.sofas.map((sofa) => (
+          {sofas.map((sofa) => (
             <div className="sofa" key={sofa.slug}>
               <Link to={`/sofa/${sofa.slug}`}>
                 <img src={sofa.image} alt="" />

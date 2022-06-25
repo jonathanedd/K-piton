@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import data from "../data";
+// import data from "../data";
 
 const Sofa = () => {
   const params = useParams();
