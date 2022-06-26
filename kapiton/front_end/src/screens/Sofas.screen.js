@@ -1,8 +1,9 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import { Link } from "react-router-dom";
 // import data from "../data";
+import "../styles/sofascreen.css";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -40,7 +41,7 @@ const SofasScreen = () => {
 
   return (
     <div>
-      <main>
+      <main className="main-container">
         <h1>Sofas</h1>
         <div className="sofas">
           {loading ? (

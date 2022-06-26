@@ -1,0 +1,31 @@
+.nav-container {
+  background: rgba(0, 0, 0, 0.466);
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  position: fixed;
+}
+
+.nav-logo {
+  display: inline;
+}
+
+.logo {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 3rem;
+  font-size: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: aliceblue;
+}

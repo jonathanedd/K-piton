@@ -7,37 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+/* header {
   padding: 1rem;
   background-color: gray;
-}
+} */
 
-header a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
 
-main {
-  padding: 2rem;
-}
 
-.sofas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-.sofa {
-  border: solid 1px #404040;
-  margin: 1rem;
-}
-
-.sofa img {
-  width: 250px;
-  max-width: 400px;
-}
-
-.sofa-info {
-  padding: 1rem;
-}

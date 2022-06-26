@@ -1,14 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import sofas from "../images/sofas4.jpg";
+import dining from "../images/comedores4.jpg";
+import chairs from "../images/chairs1.jpg";
+
+import "../styles/homescreen.css";
 
 const HomeScreen = () => {
   return (
-    <div>
-      <h1>
-        <Link to="/sofas"> Sofas</Link>
-      </h1>
-      HOLA THIS IS HOMESCREEN
-    </div>
+    <section className="main-section">
+      <header className="header-container"></header>
+
+      <div className="section-items">
+        <div className="sofas-items">
+          <Link to="/sofas">
+            <img src={sofas} alt="" />
+          </Link>
+
+          <h1>
+            <Link className="link-sofas" to="/sofas">
+              Living room sofas
+            </Link>
+          </h1>
+        </div>
+
+        <div className="dinig-chairs-container">
+          <div className="dining-tables">
+            <a href="/sofas">
+              <img src={dining} alt="" />
+            </a>
+            <h1>
+              <Link className="link-tables" to="/sofas">Dining rooms</Link>
+            </h1>
+          </div>
+
+          <div className="chairs">
+            <a href="/sofas">
+              <img src={chairs} alt="" />
+            </a>
+            <h1>
+              <Link className="link-chairs" to="/sofas">Dining rooms</Link>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
