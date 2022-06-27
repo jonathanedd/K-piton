@@ -1,0 +1,63 @@
+.main-container {
+  height: 100vh;
+}
+
+.footer-container {
+  background-color: #151515;
+  height: 500px;
+  width: 90%;
+  margin: auto;
+  margin-top: 160px;
+  display: flex;
+}
+
+.subscribe-box {
+  width: 40%;
+  height: 350px;
+  color: #dddddd;
+}
+
+.subscribe-box h3 {
+  font-size: 1.8rem;
+  font-weight: lighter;
+  padding-top: 4rem;
+  padding-left: 9rem;
+}
+.subscribe-box form {
+  padding-left: 9rem;
+  padding-top: 1rem;
+}
+
+input {
+  width: 350px;
+  height: 2rem;
+}
+
+.subscribe-box h5 {
+  padding-left: 9rem;
+  padding-top: 1rem;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.link-list {
+  height: 300px;
+  padding-left: 15rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 4rem;
+}
+
+.link-list li {
+  padding: 0.8rem;
+  list-style: none;
+  padding: 1rem;
+}
+
+.link-list a {
+  text-decoration: none;
+  
+  color: #dddddd;
+  font-size: 0.9rem;
+}
