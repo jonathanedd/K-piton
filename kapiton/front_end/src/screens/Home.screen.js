@@ -19,7 +19,7 @@ const HomeScreen = () => {
 
           <h1>
             <Link className="link-sofas" to="/sofas">
-              Living room sofas
+              Sofas
             </Link>
           </h1>
         </div>
@@ -30,7 +30,9 @@ const HomeScreen = () => {
               <img src={dining} alt="" />
             </a>
             <h1>
-              <Link className="link-tables" to="/sofas">Dining rooms</Link>
+              <Link className="link-tables" to="/sofas">
+                Dining rooms
+              </Link>
             </h1>
           </div>
 
@@ -39,7 +41,9 @@ const HomeScreen = () => {
               <img src={chairs} alt="" />
             </a>
             <h1>
-              <Link className="link-chairs" to="/sofas">Dining rooms</Link>
+              <Link className="link-chairs" to="/sofas">
+                Chairs
+              </Link>
             </h1>
           </div>
         </div>

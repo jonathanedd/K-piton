@@ -5,7 +5,7 @@ import Sofa from "./screens/Sofa.info";
 import SofasScreen from "./screens/Sofas.screen";
 
 import Nav from "./components/navbar/Nav";
-import Footer from "./components/footer/Footer";
+// import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
             <Route path="/sofa/:slug" element={<Sofa />} />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

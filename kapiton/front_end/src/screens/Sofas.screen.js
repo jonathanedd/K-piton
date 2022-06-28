@@ -4,6 +4,7 @@ import logger from "use-reducer-logger";
 import { Link } from "react-router-dom";
 // import data from "../data";
 import "../styles/sofascreen.css";
+import Rating from "../components/rating/Rating";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -58,10 +59,11 @@ const SofasScreen = () => {
                   <Link to={`/sofa/${sofa.slug}`}>
                     <h5>{sofa.name}</h5>
                   </Link>
+                  <Rating rating={sofa.rating} numReviews={sofa.numReviews}/>
                   <p>
                     <strong>${sofa.price} USD</strong>
                   </p>
-                  {/* <p>{sofa.brief}</p> */}
+
                   <button>Add to cart</button>
                 </div>
               </div>
