@@ -50,9 +50,11 @@ const Sofa = () => {
   ) : (
     <div>
       <img className="img-large" src={sofa.image} alt="" />
-      <Rating rating={sofa.rating} numReviews={sofa.numReviews}></Rating>
-      <h1>{sofa.name}</h1>
+      <h1>Sofa {sofa.name}</h1>
       <h3>${sofa.price} USD</h3>
+      <Rating rating={sofa.rating} numReviews={sofa.numReviews}></Rating>
+      
+      
       <p>{sofa.description}</p>
     </div>
   );
