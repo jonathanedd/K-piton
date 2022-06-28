@@ -26,4 +26,22 @@ header a {
 
 .sofa-info {
   padding: 1rem;
+  
+}
+
+.sofa-info h5{
+  font-size: 1.3rem;
+  font-weight:400;
+}
+
+.sofa-info a {
+  font-size: 1rem;
+  display: flex;
+  text-decoration: none;
+  color: #1b1a17;
+}
+.cart-icon {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  color: #1b1a17;
 }

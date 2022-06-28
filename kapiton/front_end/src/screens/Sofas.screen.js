@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import data from "../data";
 import "../styles/sofascreen.css";
 import Rating from "../components/rating/Rating";
+import { BsArrowRight } from "react-icons/bs";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -59,12 +60,14 @@ const SofasScreen = () => {
                   <Link to={`/sofa/${sofa.slug}`}>
                     <h5>{sofa.name}</h5>
                   </Link>
-                  <Rating rating={sofa.rating} numReviews={sofa.numReviews}/>
+                  <Rating rating={sofa.rating} numReviews={sofa.numReviews} />
                   <p>
                     <strong>${sofa.price} USD</strong>
                   </p>
-
-                  <button>Add to cart</button>
+                  <a href="/">
+                    <BsArrowRight className="cart-icon" />
+                    Add to cart
+                  </a>
                 </div>
               </div>
             ))

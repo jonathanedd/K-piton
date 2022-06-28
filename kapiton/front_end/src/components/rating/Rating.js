@@ -1,5 +1,5 @@
 import React from "react";
-import './rating.css'
+import "./rating.css";
 
 const Rating = (props) => {
   const { rating, numReviews } = props;
@@ -60,6 +60,7 @@ const Rating = (props) => {
           }
         />
       </span>
+      <span> {numReviews} Reviews</span>
     </div>
   );
 };
