@@ -1,9 +1,76 @@
-.img-large{
-    max-width: 50%;
+.sofa-info-container {
+  display: grid;
+  grid-template-columns: 60% 30%;
+  padding-left: 6rem;
 }
 
+.img-large {
+  max-width: 100%;
+}
+
+.sofa-info-description {
+  padding-top: 9rem;
+  padding-left: 5rem;
+}
+
+.sofa-info-description h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.in-stock {
+  color: #f9f3df;
+  background-color: #116530;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.1rem;
+  border-radius: 5px;
+}
+.sold-out {
+  background-color: #8c0000;
+  color: #f9f3df;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.1rem;
+  border-radius: 5px;
+}
+
+.count-in-stock {
+  width: fit-content;
+  padding: 0.5rem;
+}
+
+.count-in-stock a {
+  font-size: 1rem;
+  display: flex;
+  text-decoration: none;
+  padding-top: 0.9rem;
+  color: #1b1a17;
+}
+
+.cart-icon-sofa-info {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+
+  color: #1b1a17;
+}
+
+/* MEDIA */
 @media screen and (max-width: 600px) {
-    .img-large{
-        max-width: 100%;
-    }
+  .sofa-info-container {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 0;
+  }
+  .img-large {
+    max-width: 100%;
+  }
+
+  .sofa-info-description {
+    padding: 0;
+  }
 }

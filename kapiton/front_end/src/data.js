@@ -97,7 +97,7 @@ const data = {
       price: 1250,
       brief: "L sofa left and right",
       measure: "80 x 60 x 120 x 210 cm",
-      countInStock: 10,
+      countInStock: 6,
       brand: "Kapiton",
       rating: 4.9,
       numReviews: 4,
