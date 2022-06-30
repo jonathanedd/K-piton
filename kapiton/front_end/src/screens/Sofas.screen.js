@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import { BsArrowRight } from "react-icons/bs";
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
 import { getError } from "../utils";
+import { Store } from "../Store";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -37,12 +38,19 @@ const SofasScreen = () => {
         const result = await axios.get("/api/sofas");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: getError(err)});
+        dispatch({ type: "FETCH_FAIL", payload: getError(err) });
       }
     };
 
     fetchData();
   }, []);
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+
+  const addToCartHandler = (e) => {
+    e.preventDefault();
+    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofas, quantity: 1 } });
+  };
 
   return (
     <div>
@@ -67,7 +75,7 @@ const SofasScreen = () => {
                   <p>
                     <strong>${sofa.price} USD</strong>
                   </p>
-                  <a href="/">
+                  <a onClick={addToCartHandler} href="">
                     <BsArrowRight className="cart-icon" />
                     Add to cart
                   </a>

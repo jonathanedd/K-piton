@@ -26,6 +26,10 @@
 }
 
 .nav-list a {
-    text-decoration: none;
-    color: aliceblue;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.nav-link {
+  font-size: 1.4rem;
 }
