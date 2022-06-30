@@ -8,6 +8,7 @@ import Rating from "../components/rating/Rating";
 import { BsArrowRight } from "react-icons/bs";
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
+import { getError } from "../utils";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -36,7 +37,7 @@ const SofasScreen = () => {
         const result = await axios.get("/api/sofas");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
+        dispatch({ type: "FETCH_FAIL", payload: getError(err)});
       }
     };
 
