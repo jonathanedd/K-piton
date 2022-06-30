@@ -9,6 +9,8 @@ import Badge from "react-bootstrap/Badge";
 import "../styles/sofainfo.css";
 import Rating from "../components/rating/Rating";
 import { BsArrowRight } from "react-icons/bs";
+import LoadingBox from "../components/loading-box/LoadingBox";
+import MessageBox from "../components/message_box/MessageBox";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -48,9 +50,9 @@ const Sofa = () => {
   }, [slug]);
 
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox />
   ) : error ? (
-    <div>{error}</div>
+    <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div className="sofa-info-container">
       <div className="sofa-info-img">
@@ -70,7 +72,7 @@ const Sofa = () => {
             </Badge>
           ) : (
             <Badge className="sold-out" bg="danger">
-              Sold out
+              Out of stock
             </Badge>
           )}
           {sofa.countInStock > 0 && (

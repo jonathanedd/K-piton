@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import "../styles/sofascreen.css";
 import Rating from "../components/rating/Rating";
 import { BsArrowRight } from "react-icons/bs";
+import LoadingBox from "../components/loading-box/LoadingBox";
+import MessageBox from "../components/message_box/MessageBox";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,9 +49,9 @@ const SofasScreen = () => {
         <h1>Sofas</h1>
         <div className="sofas">
           {loading ? (
-            <div>Loading...</div>
+            <LoadingBox />
           ) : error ? (
-            <div>{error}</div>
+            <MessageBox variant="danger">{error}</MessageBox>
           ) : (
             sofas.map((sofa) => (
               <div className="sofa" key={sofa.slug}>

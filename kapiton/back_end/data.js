@@ -8,10 +8,10 @@ const data = {
       price: 899.99,
       brief: "3 seater sofa velvet fabric",
       measure: "80 x 60 x 170 cm",
-      countInStock: 0,
+      countInStock: 2,
       brand: "Kapiton",
-      rating: 4.8,
-      numReviews: 10,
+      rating: 4,
+      numReviews: 2,
       description:
         "Available in 3 incredible colors: brown, blue, salmon. This sofa is made with fully covered velvet fabric. It comes with 6 cushions, ideal for small but cozy rooms. Only 5 exclusive copies throughout the country.",
     },
@@ -23,10 +23,10 @@ const data = {
       price: 850.5,
       brief: "2 seater sofa",
       measure: "80 x 60 x 180 cm",
-      countInStock: 7,
+      countInStock: 0,
       brand: "Kapiton",
-      rating: 4.5,
-      numReviews: 6,
+      rating: 3,
+      numReviews: 3,
       description:
         "Oval sofa design in different colors. Lined in velvet and jakar fabric. available for immediate delivery",
     },
@@ -56,7 +56,7 @@ const data = {
       countInStock: 8,
       brand: "Kapiton",
       rating: 4.9,
-      numReviews: 15,
+      numReviews: 5,
       description:
         "Outdoor lounge sofa Frame  white/anthracite aluminum - Table top - ceramic teak aluminum. Available in 3 beautiful colors: Yellow, Blue and Pink.",
     },
@@ -103,7 +103,7 @@ const data = {
       rating: 4.9,
       numReviews: 4,
       description:
-        "Sofa in L single color in beige, ideal for large rooms. Armed with 4 large cushions on the back and 4 small decorative cushions on the front. Available in gray and L right or left",
+        "Sofa in L single color in beige, ideal for large rooms. Armed with 4 large cushions on the back and 4 small decorative cushions on the front. Available right and left sides.",
     },
     {
       name: "Island",

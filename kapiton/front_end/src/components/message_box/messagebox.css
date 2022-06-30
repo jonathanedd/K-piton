@@ -1,0 +1,16 @@
+.alert-box {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  height: 3rem;
+
+  background-color: rgba(165, 42, 42, 0.397);
+ 
+}
+
+.alert {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: brown;
+}
