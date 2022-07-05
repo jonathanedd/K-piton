@@ -21,14 +21,14 @@ const Nav = () => {
           <a href="/">Collections</a>
           <a href="/">Stores</a>
           <a href="/">Contact</a>
-          <Link to="/cart" className="nav-link">
-            <AiOutlineShoppingCart />
-            {cart.cartItems.length > 0 && (
-              <Badge pill bg="danger">
-                {cart.cartItems.length}
-              </Badge>
-            )}
-          </Link>
+          <div className="cart-container">
+            <Link to="/cart" className="nav-link">
+              <AiOutlineShoppingCart />
+              {cart.cartItems.length > 0 && (
+                <Badge className="cart-quantity">{cart.cartItems.length}</Badge>
+              )}
+            </Link>
+          </div>
         </div>
       </nav>
     </div>

@@ -47,8 +47,9 @@ const SofasScreen = () => {
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
 
-  const addToCartHandler = (e) => {
+  const addToCartHandler = async (e) => {
     e.preventDefault();
+
     ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofas, quantity: 1 } });
   };
 
@@ -75,10 +76,10 @@ const SofasScreen = () => {
                   <p>
                     <strong>${sofa.price} USD</strong>
                   </p>
-                  <a onClick={addToCartHandler} href="">
-                    <BsArrowRight className="cart-icon" />
-                    Add to cart
-                  </a>
+
+                  <Link to={`/sofa/${sofa.slug}`}>
+                    <BsArrowRight className="cart-icon" /> See more
+                  </Link>
                 </div>
               </div>
             ))

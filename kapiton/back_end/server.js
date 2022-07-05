@@ -15,6 +15,15 @@ app.get("/api/sofas/slug/:slug", (req, res) => {
   }
 });
 
+app.get("/api/sofas/:id", (req, res) => {
+  const sofa = data.sofas.find((x) => x._id === req.params.id);
+  if (sofa) {
+    res.send(sofa);
+  } else {
+    res.status(404).send({ message: "Product not found" });
+  }
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server at http://localhost:${port}`);

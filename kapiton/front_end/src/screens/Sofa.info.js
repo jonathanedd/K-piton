@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
@@ -12,6 +12,7 @@ import { BsArrowRight } from "react-icons/bs";
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
 import { getError } from "../utils";
+import { Store } from "../Store";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -50,6 +51,21 @@ const Sofa = () => {
     fetchData();
   }, [slug]);
 
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart } = state;
+
+  const addToCartHandler = async (e) => {
+    e.preventDefault();
+    const existItem = cart.cartItems.find((x) => x._id === sofa._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/sofas/${sofa._id}`);
+    if (data.countInStock < quantity) {
+      window.alert("Sorry the product is out of stock");
+      return;
+    }
+    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofa, quantity: 1 } });
+  };
+
   return loading ? (
     <LoadingBox />
   ) : error ? (
@@ -77,7 +93,7 @@ const Sofa = () => {
             </Badge>
           )}
           {sofa.countInStock > 0 && (
-            <a href="/">
+            <a onClick={addToCartHandler} href="/">
               <BsArrowRight className="cart-icon-sofa-info" />
               Add to cart
             </a>

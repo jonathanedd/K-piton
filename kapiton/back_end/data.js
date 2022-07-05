@@ -1,6 +1,7 @@
 const data = {
   sofas: [
     {
+      _id: "1",
       name: "Wittman",
       slug: "ray-wittman-sofa",
       category: "Sofas",
@@ -16,6 +17,7 @@ const data = {
         "Available in 3 incredible colors: brown, blue, salmon. This sofa is made with fully covered velvet fabric. It comes with 6 cushions, ideal for small but cozy rooms. Only 5 exclusive copies throughout the country.",
     },
     {
+      _id: "2",
       name: "Ovall",
       slug: "ovall-red-sofa",
       category: "Sofas",
@@ -31,6 +33,7 @@ const data = {
         "Oval sofa design in different colors. Lined in velvet and jakar fabric. available for immediate delivery",
     },
     {
+      _id: "3",
       name: "Maxalto",
       slug: "maxalto-black-sofa",
       category: "Sofas",
@@ -46,6 +49,7 @@ const data = {
         "This unique piece designed for offices and rooms. covered in bonder leather with 10 grams of foam at the base and 4 and 3 grams at the top. available in black",
     },
     {
+      _id: "4",
       name: "Solpuri",
       slug: "solpuri-blue-sofa",
       category: "Sofas",
@@ -61,6 +65,7 @@ const data = {
         "Outdoor lounge sofa Frame  white/anthracite aluminum - Table top - ceramic teak aluminum. Available in 3 beautiful colors: Yellow, Blue and Pink.",
     },
     {
+      _id: "5",
       name: "Marelli",
       slug: "marelli-blue-sofa",
       category: "Sofas",
@@ -76,6 +81,7 @@ const data = {
         "Luxury sofa collection for living rooms and/or offices and bedrooms. Jakar fabric and ultra soft foam on top. 2 cushions for each side and 4 cushions for the back. available in blue, gray and beige",
     },
     {
+      _id: "6",
       name: "Macazz",
       slug: "macazz-cream-sofa",
       category: "Sofas",
@@ -91,6 +97,7 @@ const data = {
         "Beautiful sofa covered in jakar fabric, gray beige and black, 10 units available nationwide. 4 soft cushions on the back",
     },
     {
+      _id: "7",
       name: " Vibieffe",
       slug: "vibieffe-cream-sofa",
       category: "Sofas",
@@ -106,6 +113,7 @@ const data = {
         "Sofa in L single color in beige, ideal for large rooms. Armed with 4 large cushions on the back and 4 small decorative cushions on the front. Available right and left sides.",
     },
     {
+      _id: "8",
       name: "Island",
       slug: "island-red-sofa",
       category: "Sofas",
