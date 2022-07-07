@@ -25,7 +25,7 @@ const Nav = () => {
             <Link to="/cart" className="nav-link">
               <AiOutlineShoppingCart />
               {cart.cartItems.length > 0 && (
-                <Badge className="cart-quantity">{cart.cartItems.length}</Badge>
+                <Badge className="cart-quantity">{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</Badge>
               )}
             </Link>
           </div>

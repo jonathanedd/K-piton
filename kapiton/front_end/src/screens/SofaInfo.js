@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
 // import ListGroup from 'react-bootstrap/ListGroup'
@@ -28,6 +28,7 @@ const reducer = (state, action) => {
 };
 
 const Sofa = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
 
@@ -60,10 +61,11 @@ const Sofa = () => {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/sofas/${sofa._id}`);
     if (data.countInStock < quantity) {
-      window.alert("Sorry the product is out of stock");
+      window.alert("This product is limited");
       return;
     }
-    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofa, quantity: 1 } });
+    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofa, quantity } });
+    navigate("/cart");
   };
 
   return loading ? (

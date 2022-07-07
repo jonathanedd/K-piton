@@ -1,10 +1,11 @@
 // import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomeScreen from "./screens/Home.screen";
-import Sofa from "./screens/Sofa.info";
-import SofasScreen from "./screens/Sofas.screen";
+import HomeScreen from "./screens/HomeScreen";
+import Sofa from "./screens/SofaInfo";
+import SofasScreen from "./screens/SofasScreen";
 
 import Nav from "./components/navbar/Nav";
+import CartScreen from "./screens/CartScreen";
 // import Footer from "./components/footer/Footer";
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
-
             <Route path="/sofas" element={<SofasScreen />} />
             <Route path="/sofa/:slug" element={<Sofa />} />
+            <Route path="/cart" element={<CartScreen />}></Route>
           </Routes>
         </main>
         {/* <Footer /> */}

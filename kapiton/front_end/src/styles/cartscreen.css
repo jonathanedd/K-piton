@@ -1,0 +1,27 @@
+.cart-section {
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+}
+
+.cart-container-items{
+    border: solid 1px rgba(128, 128, 128, 0.555);
+    border-radius: 10px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 40% 50%;
+}
+
+.cart-item img {
+  width: 250px;
+  border-radius: 1rem;
+}
+.content button {
+  margin: 1.5rem;
+}
+
+.content {
+  padding-top: 5rem;
+}
