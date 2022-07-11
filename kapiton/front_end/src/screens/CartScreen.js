@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Store } from "../Store";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "../styles/cartscreen.css";
 
 const CartScreen = () => {
@@ -9,6 +10,21 @@ const CartScreen = () => {
     cart: { cartItems },
   } = state;
 
+  const updateCartHandler = async (item, quantity) => {
+    const { data } = await axios.get(`/api/sofas/${item._id}`);
+    if (data.countInStock < quantity) {
+      window.alert("Sory, this product is limited");
+      return;
+    }
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+  };
+
+  const removeItemHandler = (item) => {
+    ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
+  };
   return (
     <div className="cart-section">
       <div className="main-div-cart">
@@ -24,15 +40,21 @@ const CartScreen = () => {
 
                 <div className="content">
                   {item.name}
-                  <button disabled={item.quantity === 1}>
+                  <button
+                    onClick={() => updateCartHandler(item, item.quantity - 1)}
+                    disabled={item.quantity === 1}
+                  >
                     <i className="fas fa-minus-circle"></i>
                   </button>{" "}
                   <span>{item.quantity}</span>{" "}
-                  <button>
+                  <button
+                    onClick={() => updateCartHandler(item, item.quantity + 1)}
+                    disabled={item.quantity === item.countInStock}
+                  >
                     <i className="fas fa-plus-circle"></i>
                   </button>
                   ${item.price} USD
-                  <button>
+                  <button onClick={() => removeItemHandler(item)}>
                     <i className="fas fa-trash"></i>
                   </button>
                 </div>
@@ -46,11 +68,13 @@ const CartScreen = () => {
             Subtotal: ({cartItems.reduce((a, c) => a + c.quantity, 0)} items) :
             $ {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
           </h3>
+          <button type="button" disabled={cartItems.length === 0}>
+            Proceed to check out
+          </button>
         </div>
       </div>
     </div>
   );
-
 };
 
 export default CartScreen;
