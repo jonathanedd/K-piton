@@ -11,9 +11,7 @@ const CartScreen = () => {
 
   return (
     <div className="cart-section">
-      <h1>Shopping cart</h1>
-
-      <div>
+      <div className="main-div-cart">
         {cartItems.length === 0 ? (
           <p>
             Cart is empty <Link to="/">Go shopping</Link>
@@ -42,15 +40,17 @@ const CartScreen = () => {
             ))}
           </div>
         )}
-      </div>
-      <div>
-        <h3>
-          Subtotal: ({cartItems.reduce((a, c) => a + c.quantity, 0)} items) : ${" "}
-          {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
-        </h3>
+
+        <div className="subtotal">
+          <h3>
+            Subtotal: ({cartItems.reduce((a, c) => a + c.quantity, 0)} items) :
+            $ {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+          </h3>
+        </div>
       </div>
     </div>
   );
+
 };
 
 export default CartScreen;

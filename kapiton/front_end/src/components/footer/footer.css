@@ -1,5 +1,7 @@
-.main-container {
+.footer-main-container {
   height: 100vh;
+  padding: 50px;
+  
 }
 
 .footer-container {
@@ -8,6 +10,7 @@
   width: 90%;
   margin: auto;
   margin-top: 160px;
+
   display: flex;
 }
 
@@ -57,7 +60,9 @@ input {
 
 .link-list a {
   text-decoration: none;
-  
+
   color: #dddddd;
   font-size: 0.9rem;
 }
+
+
