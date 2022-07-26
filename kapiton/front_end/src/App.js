@@ -6,6 +6,7 @@ import SofasScreen from "./screens/SofasScreen";
 
 import Nav from "./components/navbar/Nav";
 import CartScreen from "./screens/CartScreen";
+import SigninScreen from "./screens/SigninScreen";
 // import Footer from "./components/footer/Footer";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/sofas" element={<SofasScreen />} />
             <Route path="/sofa/:slug" element={<Sofa />} />
             <Route path="/cart" element={<CartScreen />}></Route>
+            <Route path="/signin" element={<SigninScreen />}></Route>
           </Routes>
         </main>
         {/* <Footer /> */}
