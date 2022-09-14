@@ -45,13 +45,13 @@ const SofasScreen = () => {
     fetchData();
   }, []);
 
-  const { state, dispatch: ctxDispatch } = useContext(Store);
+  // const { state, dispatch: ctxDispatch } = useContext(Store);
 
-  const addToCartHandler = async (e) => {
-    e.preventDefault();
+  // const addToCartHandler = async (e) => {
+  //   e.preventDefault();
 
-    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofas, quantity: 1 } });
-  };
+  //   ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...sofas, quantity: 1 } });
+  // };
 
   return (
     <div>

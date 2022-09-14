@@ -40,6 +40,19 @@ app.get("/api/sofas/:id", (req, res) => {
   }
 });
 
+app.get("/api/chairs", (req, res) => {
+  res.send(data.chairs);
+});
+
+app.get("/api/chairs/:id", (req, res) => {
+  const chair = data.chairs.find((x) => x._id === req.params.id);
+  if (chair) {
+    res.send(chair);
+  } else {
+    res.status(404).send({ message: "Product not found" });
+  }
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server at http://localhost:${port}`);

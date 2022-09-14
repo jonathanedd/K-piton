@@ -120,6 +120,40 @@ const data = {
         "This beautiful sofa is made with soft jakar fabric, filled with soft foam, padded on the sides and back, legs with a metallic finish.",
     },
   ],
+  chairs: [
+    {
+      _id: "9",
+      name: "Fredericia",
+      slug: "spanish-chair",
+      category: "chairs",
+      image: "/images/chairs/chair1.jpg",
+      price: 690,
+      brief: "Spanish chair",
+      measure: "80 x 60 x 195 cm",
+      countInStock: 6,
+      brand: "Kapiton",
+      rating: 4.9,
+      numReviews: 10,
+      description:
+        "This beautiful sofa is made with soft jakar fabric, filled with soft foam, padded on the sides and back, legs with a metallic finish.",
+    },
+    {
+      _id: "10",
+      name: "Swoon Chair",
+      slug: "swoon-chair",
+      category: "chairs",
+      image: "/images/chairs/chair2.jpg",
+      price: 599,
+      brief: "Swoon chair",
+      measure: "80 x 60 x 195 cm",
+      countInStock: 6,
+      brand: "Kapiton",
+      rating: 4.9,
+      numReviews: 10,
+      description:
+        "This beautiful sofa is made with soft jakar fabric, filled with soft foam, padded on the sides and back, legs with a metallic finish.",
+    },
+  ],
 };
 
 export default data;

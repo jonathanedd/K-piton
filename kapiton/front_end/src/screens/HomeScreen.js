@@ -37,11 +37,11 @@ const HomeScreen = () => {
           </div>
 
           <div className="chairs">
-            <a href="/sofas">
+            <a href="/chairs">
               <img src={chairs} alt="" />
             </a>
             <h1>
-              <Link className="link-chairs" to="/sofas">
+              <Link className="link-chairs" to="/chairs">
                 Chairs
               </Link>
             </h1>
