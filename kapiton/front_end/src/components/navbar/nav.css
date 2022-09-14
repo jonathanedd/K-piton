@@ -4,6 +4,7 @@
   height: 3.5rem;
   display: flex;
   position: fixed;
+  top: 0;
 }
 
 .nav-logo {

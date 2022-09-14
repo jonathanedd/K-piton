@@ -56,7 +56,9 @@ const SofasScreen = () => {
   return (
     <div>
       <main className="main-container">
-        <h1>Sofas</h1>
+        <h1>
+          <Link to="/">Back</Link>
+        </h1>
         <div className="sofas">
           {loading ? (
             <LoadingBox />
