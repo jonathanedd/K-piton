@@ -26,11 +26,11 @@ const HomeScreen = () => {
 
         <div className="dinig-chairs-container">
           <div className="dining-tables">
-            <a href="/sofas">
+            <a href="/tables">
               <img src={dining} alt="" />
             </a>
             <h1>
-              <Link className="link-tables" to="/sofas">
+              <Link className="link-tables" to="/tables">
                 Dining rooms
               </Link>
             </h1>

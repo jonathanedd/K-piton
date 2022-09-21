@@ -13,7 +13,7 @@ const Nav = () => {
       <nav className="nav-container me-auto">
         <div className="nav-logo">
           <Link className="logo" to="/">
-            Kápiton
+            Kapitoné
           </Link>
         </div>
         <div className="nav-list">

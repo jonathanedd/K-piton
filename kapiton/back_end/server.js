@@ -19,9 +19,11 @@ const app = express();
 
 app.use("/api/seed", seedRouter);
 
+//Sofas api request
 app.get("/api/sofas", (req, res) => {
   res.send(data.sofas);
 });
+
 app.get("/api/sofas/slug/:slug", (req, res) => {
   const sofa = data.sofas.find((x) => x.slug === req.params.slug);
   if (sofa) {
@@ -40,6 +42,7 @@ app.get("/api/sofas/:id", (req, res) => {
   }
 });
 
+//api chairs request
 app.get("/api/chairs", (req, res) => {
   res.send(data.chairs);
 });
@@ -49,7 +52,21 @@ app.get("/api/chairs/:id", (req, res) => {
   if (chair) {
     res.send(chair);
   } else {
-    res.status(404).send({ message: "Product not found" });
+    res.status(404).send({ message: "Product was not found" });
+  }
+});
+
+//api tables request
+app.get("/api/tables", (req, res) => {
+  res.send(data.tables);
+});
+
+app.get("/api/tables/:id", (req, res) => {
+  const table = data.tables.find((x) => x._id === req.params.id);
+  if (table) {
+    res.send(table);
+  } else {
+    res.status(404).send({ message: "Product was not found" });
   }
 });
 

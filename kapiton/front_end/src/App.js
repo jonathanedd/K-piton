@@ -8,7 +8,8 @@ import Nav from "./components/navbar/Nav";
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
 import ChairScreen from "./screens/ChairScreen";
-// import Footer from "./components/footer/Footer";
+import TableScreen from "./screens/TableScreen";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -24,11 +25,12 @@ function App() {
             <Route path="/sofas" element={<SofasScreen />} />
             <Route path="/sofa/:slug" element={<Sofa />} />
             <Route path="/chairs" element={<ChairScreen />}></Route>
+            <Route path="/tables" element={<TableScreen />}></Route>
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/signin" element={<SigninScreen />}></Route>
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
   );

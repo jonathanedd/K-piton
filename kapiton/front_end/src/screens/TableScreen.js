@@ -1,21 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useReducer } from "react";
-import { Link } from "react-router-dom";
 import logger from "use-reducer-logger";
+import { getError } from "../utils";
+import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
+
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
-
-import { getError } from "../utils";
 import Rating from "../components/rating/Rating";
-import { BsArrowRight } from "react-icons/bs";
-import "../styles/chairscreen.css";
+
+import "../styles/tableScreen.css";
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
       return { ...state, loading: true };
     case "FETCH_SUCCESS":
-      return { ...state, chairs: action.payload, loading: false };
+      return { ...state, tables: action.payload, loading: false };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
     default:
@@ -23,9 +24,9 @@ const reducer = (state, action) => {
   }
 };
 
-const ChairScreen = () => {
-  const [{ loading, error, chairs }, dispatch] = useReducer(logger(reducer), {
-    chairs: [],
+const TableScreen = () => {
+  const [{ loading, error, tables }, dispatch] = useReducer(logger(reducer), {
+    tables: [],
     loading: true,
     error: "",
   });
@@ -34,7 +35,7 @@ const ChairScreen = () => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-        const result = await axios.get("/api/chairs");
+        const result = await axios.get("/api/tables");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: getError(err) });
@@ -52,27 +53,27 @@ const ChairScreen = () => {
             Back
           </Link>
         </h1>
-        <div className="chairs">
+        <div className="tables">
           {loading ? (
             <LoadingBox />
           ) : error ? (
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (
-            chairs.map((chair) => (
-              <div className="chair" key={chair.slug}>
-                <Link to={`/chair/${chair.slug}`}>
-                  <img src={chair.image} alt="" />
+            tables.map((table) => (
+              <div className="table" key={table.slug}>
+                <Link to={`/table/${table.slug}`}>
+                  <img src={table.image} alt="" />
                 </Link>
-                <div className="chair-info">
-                  <Link to={`/chair/${chair.slug}`}>
-                    <h5>{chair.name}</h5>
+                <div className="table-info">
+                  <Link to={`/table/${table.slug}`}>
+                    <h5>{table.name}</h5>
                   </Link>
-                  <Rating rating={chair.rating} numReviews={chair.numReviews} />
+                  <Rating rating={table.rating} numReviews={table.numReviews} />
                   <p>
-                    <strong>${chair.price} USD</strong>
+                    <strong>${table.price} USD</strong>
                   </p>
 
-                  <Link to={`/chair/${chair.slug}`}>
+                  <Link to={`/table/${table.slug}`}>
                     <BsArrowRight className="cart-icon" /> See more
                   </Link>
                 </div>
@@ -85,4 +86,4 @@ const ChairScreen = () => {
   );
 };
 
-export default ChairScreen;
+export default TableScreen;
