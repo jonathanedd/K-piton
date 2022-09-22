@@ -48,9 +48,9 @@ const ChairScreen = () => {
     <div>
       <main classname="main-container">
         <h1 className="icon-box">
-          <Link className="back-icon" to="/">
+          {/* <Link className="back-icon" to="/">
             Back
-          </Link>
+          </Link> */}
         </h1>
         <div className="chairs">
           {loading ? (

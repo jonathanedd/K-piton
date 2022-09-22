@@ -47,6 +47,15 @@ app.get("/api/chairs", (req, res) => {
   res.send(data.chairs);
 });
 
+app.get("/api/chairs/slug/:slug", (req, res) => {
+  const chair = data.chairs.find((x) => x.slug === req.params.slug);
+  if (chair) {
+    res.send(chair);
+  } else {
+    res.status(404).send({ message: "Product not found" });
+  }
+});
+
 app.get("/api/chairs/:id", (req, res) => {
   const chair = data.chairs.find((x) => x._id === req.params.id);
   if (chair) {

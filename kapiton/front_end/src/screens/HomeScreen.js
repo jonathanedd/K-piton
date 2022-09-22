@@ -31,7 +31,7 @@ const HomeScreen = () => {
             </a>
             <h1>
               <Link className="link-tables" to="/tables">
-                Dining rooms
+                Dining rooms & tables
               </Link>
             </h1>
           </div>
