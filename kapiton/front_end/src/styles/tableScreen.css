@@ -1,53 +1,63 @@
 .main-container {
-    padding: 2rem;
-  }
-  
-  .icon-box {
-    margin-top: 3.5rem;
-    margin-left: 7rem;
-    display: inline-block;
-  }
-  
-  /* Icon box needs to be adjusted in media queries */
-  
-  .back-icon {
-    color: blue;
-    font-size: 1.5rem;
-  }
-  
-  .tables {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .table {
-    border: solid 1px #40404046;
-    margin: 1rem;
-  }
-  
-  .table img {
-    width: 280px;
-    max-width: 400px;
-  }
-  
-  .table-info {
-    padding: 1rem;
-  }
-  
-  .table-info h5 {
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-  
-  .table-info a {
-    font-size: 1rem;
-    display: flex;
-    text-decoration: none;
-    color: #1b1a17;
-  }
-  .cart-icon {
-    font-size: 1.5rem;
-    padding-right: 0.5rem;
-    color: #1b1a17;
-  }
+  padding: 2rem;
+}
+
+.back-icon-tables {
+  margin-top: 3.5rem;
+  margin-left: 9rem;
+  display: inline-block;
+  color: #222831;
+  font-size: 2rem;
+}
+
+.tables-title {
+  color: #393e46;
+  display: inline;
+  margin: 3rem;
+  font-size: 2.1rem;
+  font-weight: lighter;
+}
+
+/* Icon box needs to be adjusted in media queries */
+
+.back-icon {
+  color: blue;
+  font-size: 1.5rem;
+}
+
+.tables {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.table {
+  border: solid 1px #40404046;
+  margin: 1rem;
+}
+
+.table img {
+  width: 280px;
+  max-width: 400px;
+}
+
+.table-info {
+  padding: 1rem;
+}
+
+.table-info h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.table-info a {
+  font-size: 1rem;
+  display: flex;
+  text-decoration: none;
+  color: #1b1a17;
+}
+.cart-icon {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  color: #1b1a17;
+}

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "../styles/sofascreen.css";
 import Rating from "../components/rating/Rating";
 import { BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
 import { getError } from "../utils";
@@ -56,9 +57,11 @@ const SofasScreen = () => {
   return (
     <div>
       <main className="main-container">
-        <h1>
-          <Link to="/">Back</Link>
-        </h1>
+        <Link to="/">
+          <BsArrowLeft className="back-icon-sofas" />
+        </Link>
+
+        <h2 className="sofas-title">Sofas</h2>
         <div className="sofas">
           {loading ? (
             <LoadingBox />

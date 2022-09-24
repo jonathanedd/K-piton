@@ -8,6 +8,22 @@ header a {
   font-weight: lighter;
 }
 
+.back-icon-sofas {
+  margin-top: 3.5rem;
+  margin-left: 7rem;
+  display: inline-block;
+  color: #222831;
+  font-size: 2rem;
+}
+
+.sofas-title {
+  color: #393e46;
+  display: inline;
+  margin: 3rem;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
 .sofas {
   display: flex;
   flex-wrap: wrap;

@@ -4,6 +4,7 @@ import logger from "use-reducer-logger";
 import { getError } from "../utils";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
 
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
@@ -48,11 +49,11 @@ const TableScreen = () => {
   return (
     <div>
       <main classname="main-container">
-        <h1 className="icon-box">
-          <Link className="back-icon" to="/">
-            Back
-          </Link>
-        </h1>
+        <Link to="/">
+          <BsArrowLeft className="back-icon-tables" />
+        </Link>
+
+        <h2 className="tables-title">Dining tables</h2>
         <div className="tables">
           {loading ? (
             <LoadingBox />

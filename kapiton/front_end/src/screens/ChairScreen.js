@@ -8,6 +8,7 @@ import MessageBox from "../components/message_box/MessageBox";
 import { getError } from "../utils";
 import Rating from "../components/rating/Rating";
 import { BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
 import "../styles/chairscreen.css";
 
 const reducer = (state, action) => {
@@ -47,11 +48,11 @@ const ChairScreen = () => {
   return (
     <div>
       <main classname="main-container">
-        <h1 className="icon-box">
-          {/* <Link className="back-icon" to="/">
-            Back
-          </Link> */}
-        </h1>
+        <Link to="/">
+          <BsArrowLeft className="back-icon-chairs" />
+        </Link>
+
+        <h2 className="chairs-title">Chairs</h2>
         <div className="chairs">
           {loading ? (
             <LoadingBox />
