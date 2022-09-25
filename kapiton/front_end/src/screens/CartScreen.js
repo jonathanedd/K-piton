@@ -83,7 +83,6 @@ const CartScreen = () => {
           </button>
           <h5>3 to 5 days delivery</h5>
         </div>
-        
       </div>
     </div>
   );

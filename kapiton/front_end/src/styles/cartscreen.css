@@ -21,11 +21,11 @@
   border-radius: 10px;
   width: 100%;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 38% 70%;
 }
 
 .cart-item img {
-  width: 250px;
+  width: 260px;
   border-radius: 1rem;
 }
 .content button {
@@ -43,6 +43,9 @@
   width: 350px;
   height: fit-content;
   text-align: center;
+
+  position: fixed;
+  right: 10rem;
 }
 
 .subtotal button {
@@ -90,6 +93,8 @@
   .subtotal {
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 90%;
+    position:static;
+    
   }
 }

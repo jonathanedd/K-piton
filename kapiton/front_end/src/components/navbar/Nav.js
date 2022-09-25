@@ -17,7 +17,19 @@ const Nav = () => {
           </Link>
         </div>
         <div className="nav-list">
-          <a href="/">Products</a>
+          <div className="dropdown-products">
+            <h4>Products</h4>
+            <li>
+              <a href="/sofas">Sofas</a>
+            </li>
+            <li>
+              <a href="/tables">Dining tables</a>
+            </li>
+            <li>
+              <a href="/chairs">Dining tables</a>
+            </li>
+          </div>
+
           <a href="/">Collections</a>
           <a href="/">Stores</a>
           <a href="/">Contact</a>
@@ -25,7 +37,9 @@ const Nav = () => {
             <Link to="/cart" className="nav-link">
               <AiOutlineShoppingCart />
               {cart.cartItems.length > 0 && (
-                <Badge className="cart-quantity">{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</Badge>
+                <Badge className="cart-quantity">
+                  {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                </Badge>
               )}
             </Link>
           </div>
