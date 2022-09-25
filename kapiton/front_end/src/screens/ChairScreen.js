@@ -48,7 +48,7 @@ const ChairScreen = () => {
   return (
     <div>
       <main classname="main-container">
-        <Link to="/">
+        <Link to="/tables">
           <BsArrowLeft className="back-icon-chairs" />
         </Link>
 

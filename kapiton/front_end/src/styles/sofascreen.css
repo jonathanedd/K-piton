@@ -24,6 +24,14 @@ header a {
   font-weight: lighter;
 }
 
+.front-icon-sofas {
+  margin-top: 3.5rem;
+  
+  display: inline-block;
+  color: #222831;
+  font-size: 2rem;
+}
+
 .sofas {
   display: flex;
   flex-wrap: wrap;

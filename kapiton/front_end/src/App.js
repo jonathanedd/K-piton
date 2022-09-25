@@ -11,6 +11,7 @@ import ChairScreen from "./screens/ChairScreen";
 import TableScreen from "./screens/TableScreen";
 import Footer from "./components/footer/Footer";
 import ChairInfo from "./screens/ChairInfo";
+import TableInfo from "./screens/TableInfo";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/chairs" element={<ChairScreen />}></Route>
             <Route path="/chair/:slug" element={<ChairInfo />} />
             <Route path="/tables" element={<TableScreen />}></Route>
+            <Route path="/table/:slug" element={<TableInfo />} />
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/signin" element={<SigninScreen />}></Route>
           </Routes>

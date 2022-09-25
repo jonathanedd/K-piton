@@ -264,7 +264,7 @@ const data = {
       _id: "17",
       name: "Gianni",
       slug: "gianni-table",
-      category: "tables",
+      category: "dining rooms",
       image: "/images/tables/table1.jpg",
       price: 359.99,
       brief: "gianni table an dante",
@@ -273,13 +273,14 @@ const data = {
       brand: "Kapiton",
       rating: 4.9,
       numReviews: 8,
-      description: "This beautiful sofa is made",
+      description:
+        "Oak wood surface and made with metal bases will cover the beautiful space of your dining room. This dining room is delivered with 6 upholstered chairs.",
     },
     {
       _id: "18",
       name: "Palatti",
       slug: "palatti-table",
-      category: "tables",
+      category: "dining rooms",
       image: "/images/tables/table2.jpg",
       price: 329.99,
       brief: "palatti table an dante",
@@ -288,13 +289,14 @@ const data = {
       brand: "Kapiton",
       rating: 4.9,
       numReviews: 8,
-      description: "This beautiful sofa is made",
+      description:
+        "Surface in oak and walnut wood and made with metal bases will cover the beautiful space of your dining room. This table is delivered with 6 or 8 upholstered chairs.",
     },
     {
       _id: "19",
       name: "Pyramid",
       slug: "pyramid-table",
-      category: "tables",
+      category: "dining tables",
       image: "/images/tables/table3.jpg",
       price: 229.99,
       brief: "pyramid table",
@@ -303,7 +305,8 @@ const data = {
       brand: "Kapiton",
       rating: 4.9,
       numReviews: 8,
-      description: "This beautiful sofa is made",
+      description:
+        "The Pyramid table is made to bring freshness to your home. With a walnut surface and shiny metal legs, this beautiful dining room comes with 6 or 8 upholstered chairs.",
     },
     {
       _id: "20",

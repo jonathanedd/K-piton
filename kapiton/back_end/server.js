@@ -70,6 +70,15 @@ app.get("/api/tables", (req, res) => {
   res.send(data.tables);
 });
 
+app.get("/api/tables/slug/:slug", (req, res) => {
+  const table = data.tables.find((x) => x.slug === req.params.slug);
+  if (table) {
+    res.send(table);
+  } else {
+    res.status(404).send({ message: "Product not found" });
+  }
+});
+
 app.get("/api/tables/:id", (req, res) => {
   const table = data.tables.find((x) => x._id === req.params.id);
   if (table) {

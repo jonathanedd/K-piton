@@ -49,11 +49,15 @@ const TableScreen = () => {
   return (
     <div>
       <main classname="main-container">
-        <Link to="/">
+        <Link to="/sofas">
           <BsArrowLeft className="back-icon-tables" />
         </Link>
 
         <h2 className="tables-title">Dining tables</h2>
+
+        <Link to="/chairs">
+          <BsArrowRight className="front-icon-sofas" />
+        </Link>
         <div className="tables">
           {loading ? (
             <LoadingBox />

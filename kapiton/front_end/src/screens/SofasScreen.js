@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import LoadingBox from "../components/loading-box/LoadingBox";
 import MessageBox from "../components/message_box/MessageBox";
 import { getError } from "../utils";
-import { Store } from "../Store";
+// import { Store } from "../Store";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -62,6 +62,11 @@ const SofasScreen = () => {
         </Link>
 
         <h2 className="sofas-title">Sofas</h2>
+
+        <Link to="/tables">
+          <BsArrowRight className="front-icon-sofas" />
+        </Link>
+
         <div className="sofas">
           {loading ? (
             <LoadingBox />

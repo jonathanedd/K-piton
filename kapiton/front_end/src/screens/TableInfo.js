@@ -15,7 +15,7 @@ const reducer = (state, action) => {
     case "FETCH_REQUEST":
       return { ...state, loading: true };
     case "FETCH_SUCCESS":
-      return { ...state, chair: action.payload, loading: false };
+      return { ...state, table: action.payload, loading: false };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
     default:
@@ -23,13 +23,13 @@ const reducer = (state, action) => {
   }
 };
 
-const ChairInfo = () => {
+const TableInfo = () => {
   const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
 
-  const [{ loading, error, chair }, dispatch] = useReducer(reducer, {
-    chair: [],
+  const [{ loading, error, table }, dispatch] = useReducer(reducer, {
+    table: [],
     loading: true,
     error: "",
   });
@@ -38,7 +38,7 @@ const ChairInfo = () => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-        const result = await axios.get(`/api/chairs/slug/${slug}`);
+        const result = await axios.get(`/api/tables/slug/${slug}`);
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: getError(err) });
@@ -53,14 +53,14 @@ const ChairInfo = () => {
 
   const addToCartHandler = async (e) => {
     e.preventDefault();
-    const existItem = cart.cartItems.find((x) => x._id === chair._id);
+    const existItem = cart.cartItems.find((x) => x._id === table._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/chairs/${chair._id}`);
+    const { data } = await axios.get(`/api/tables/${table._id}`);
     if (data.countInStock < quantity) {
       window.alert("This product is limited");
       return;
     }
-    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...chair, quantity } });
+    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...table, quantity } });
     navigate("/cart");
   };
 
@@ -71,18 +71,18 @@ const ChairInfo = () => {
   ) : (
     <div className="sofa-info-container">
       <div className="sofa-info-img">
-        <img className="img-large" src={chair.image} alt="" />
+        <img className="img-large" src={table.image} alt="" />
       </div>
 
       <div className="sofa-info-description">
-        <h1>{chair.name}</h1>
-        <h3>Chairs</h3>
-        <h3>${chair.price} USD</h3>
-        <Rating rating={chair.rating} numReviews={chair.numReviews}></Rating>
-        <p>{chair.description}</p>
+        <h1>{table.name}</h1>
+        <h3>Category: {table.category}</h3>
+        <h3>${table.price} USD</h3>
+        <Rating rating={table.rating} numReviews={table.numReviews}></Rating>
+        <p>{table.description}</p>
 
         <div className="count-in-stock">
-          {chair.countInStock > 0 ? (
+          {table.countInStock > 0 ? (
             <Badge className="in-stock" bg="success">
               In stock
             </Badge>
@@ -91,7 +91,7 @@ const ChairInfo = () => {
               Out of stock
             </Badge>
           )}
-          {chair.countInStock > 0 && (
+          {table.countInStock > 0 && (
             <a onClick={addToCartHandler} href="/">
               <BsArrowRight className="cart-icon-sofa-info" />
               Add to cart
@@ -100,7 +100,7 @@ const ChairInfo = () => {
         </div>
       </div>
     </div>
-  );
+  );;
 };
 
-export default ChairInfo;
+export default TableInfo;
