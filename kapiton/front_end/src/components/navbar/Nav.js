@@ -1,34 +1,50 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "../navbar/nav.css";
 import Badge from "react-bootstrap/esm/Badge";
 import { Store } from "../../Store";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineCaretDown } from "react-icons/ai";
+
+import { Button } from "../button/Button";
+import Dropdown from "../dropdown/Dropdown";
 
 const Nav = () => {
+  const [open, setIsOpen] = useState(false);
+
   const { state } = useContext(Store);
   const { cart } = state;
+
+  const dropdown = () => {
+    setIsOpen(!open);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div>
+    <>
       <nav className="nav-container me-auto">
-        <div className="nav-logo">
-          <Link className="logo" to="/">
-            Kapitoné
-          </Link>
-        </div>
-        <div className="nav-list">
-          <div className="dropdown-products">
-            <h4>Products</h4>
-            <li>
-              <a href="/sofas">Sofas</a>
+        <Link className="logo" to="/">
+          Kapitoné
+        </Link>
+
+        <div className="nav-list" onClick={dropdown}>
+          <i className={open ? "fas fa-times" : "fas fa-bars"}></i>
+
+          <ul className={open ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/Sofas" classname="nav-links" onClick={closeMenu}>
+                Products
+              </Link>
             </li>
-            <li>
-              <a href="/tables">Dining tables</a>
+
+            <li className="nav-item">
+              <Link to="/Chairs" classname="nav-links" onClick={closeMenu}>
+                Collections <AiOutlineCaretDown/>
+              </Link>
             </li>
-            <li>
-              <a href="/chairs">Dining tables</a>
-            </li>
-          </div>
+          </ul>
 
           <a href="/">Collections</a>
           <a href="/">Stores</a>
@@ -45,7 +61,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 

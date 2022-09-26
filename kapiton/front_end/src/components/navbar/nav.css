@@ -14,8 +14,8 @@
 .logo {
   color: aliceblue;
   text-decoration: none;
-  padding: 3rem;
-  font-size: 2rem;
+  padding-left: 3rem;
+  font-size: 1.9rem;
 }
 
 .nav-list {
@@ -24,6 +24,31 @@
   width: 50%;
   margin: auto;
   justify-content: space-evenly;
+}
+
+.products {
+  text-decoration: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.products:hover {
+  color: black;
+}
+
+.dropdown-products {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.dropdown-products li {
+  list-style: none;
+  padding: 0.3rem;
+  background-color: black;
+  /* opacity: 0; */
+}
+.dropdown-products li:hover {
+  transition: 2s;
 }
 
 .nav-list a {
