@@ -23,6 +23,30 @@ const CartScreen = () => {
     });
   };
 
+  const updateCartHandler1 = async (item, quantity) => {
+    const { data } = await axios.get(`/api/tables/${item._id}`);
+    if (data.countInStock < quantity) {
+      window.alert("Sory, this product is limited");
+      return;
+    }
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+  };
+
+  const updateCartHandler2 = async (item, quantity) => {
+    const { data } = await axios.get(`/api/chairs/${item._id}`);
+    if (data.countInStock < quantity) {
+      window.alert("Sory, this product is limited");
+      return;
+    }
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+  };
+
   const removeItemHandler = (item) => {
     ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
@@ -47,14 +71,22 @@ const CartScreen = () => {
                 <div className="content">
                   {item.name}
                   <button
-                    onClick={() => updateCartHandler(item, item.quantity - 1)}
+                    onClick={() =>
+                      updateCartHandler(item, item.quantity - 1) &&
+                      updateCartHandler1(item, item.quantity - 1) &&
+                      updateCartHandler2(item, item.quantity - 1)
+                    }
                     disabled={item.quantity === 1}
                   >
                     <i className="fas fa-minus-circle"></i>
                   </button>{" "}
                   <span>{item.quantity}</span>{" "}
                   <button
-                    onClick={() => updateCartHandler(item, item.quantity + 1)}
+                    onClick={() =>
+                      updateCartHandler(item, item.quantity + 1) &&
+                      updateCartHandler1(item, item.quantity + 1) &&
+                      updateCartHandler2(item, item.quantity + 1)
+                    }
                     disabled={item.quantity === item.countInStock}
                   >
                     <i className="fas fa-plus-circle"></i>
