@@ -1,9 +1,35 @@
 .small-container {
   max-width: 600px;
-  
+  margin: auto;
 }
 
-form{
-    margin: auto;
-    margin-top: 100px;
+.my-3 {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 50%;
+  justify-content: center;
+}
+
+input {
+  border-radius: 0.4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sign-in {
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.466);
+  color: aliceblue;
+  width: 360px;
+}
+
+.new-customer {
+  padding: 3rem;
+  width: 300px;
 }

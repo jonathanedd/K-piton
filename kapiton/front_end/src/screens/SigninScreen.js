@@ -16,11 +16,18 @@ const SigninScreen = () => {
           Email:
           <input placeholder="Email" type="email" name="Email" required />
           Password:
-          <input placeholder="Password" type="password" name="Password" required />
+          <input
+            placeholder="Password"
+            type="password"
+            name="Password"
+            required
+          />
         </label>
-        <button type="submit">Sign in</button>
-        <div>
-          New customer?{" "}
+        <button className="sign-in" type="submit">
+          Sign in
+        </button>
+        <div className="new-customer">
+          New customer ?{" "}
           <Link to={`/signup?redirect=${redirect}`}>Create an account</Link>
         </div>
       </form>
@@ -29,5 +36,3 @@ const SigninScreen = () => {
 };
 
 export default SigninScreen;
-
-
