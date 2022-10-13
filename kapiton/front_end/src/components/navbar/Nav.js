@@ -5,21 +5,22 @@ import Badge from "react-bootstrap/esm/Badge";
 import { Store } from "../../Store";
 import { AiOutlineShoppingCart, AiOutlineCaretDown } from "react-icons/ai";
 
-import { Button } from "../button/Button";
+// import { Button } from "../button/Button";
 import Dropdown from "../dropdown/Dropdown";
 
 const Nav = () => {
-  const [open, setIsOpen] = useState(false);
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   const { state } = useContext(Store);
   const { cart } = state;
 
-  const dropdown = () => {
-    setIsOpen(!open);
+  const handleClick = () => {
+    setClick(!click);
   };
 
   const closeMenu = () => {
-    setIsOpen(false);
+    setClick(false);
   };
 
   return (
@@ -29,19 +30,20 @@ const Nav = () => {
           Kapitoné
         </Link>
 
-        <div className="nav-list" onClick={dropdown}>
-          <i className={open ? "fas fa-times" : "fas fa-bars"}></i>
+        <div className="nav-list" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
 
-          <ul className={open ? "nav-menu active" : "nav-menu"}>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/Sofas" classname="nav-links" onClick={closeMenu}>
-                Products
+              <Link to="/" classname="nav-links" onClick={closeMenu}>
+                Products <AiOutlineCaretDown />
+                {dropdown && <Dropdown />}
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/Chairs" classname="nav-links" onClick={closeMenu}>
-                Collections <AiOutlineCaretDown/>
+              <Link to="/" classname="nav-links" onClick={closeMenu}>
+                Collections
               </Link>
             </li>
           </ul>
