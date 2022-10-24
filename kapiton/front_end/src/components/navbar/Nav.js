@@ -23,6 +23,22 @@ const Nav = () => {
     setClick(false);
   };
 
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
   return (
     <>
       <nav className="nav-container me-auto">
@@ -31,19 +47,17 @@ const Nav = () => {
         </Link>
 
         <div className="nav-list" onClick={handleClick}>
-          <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          {/* <i className={click ? "fas fa-times" : "fas fa-bars"}></i> */}
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
               <Link to="/" classname="nav-links" onClick={closeMenu}>
                 Products <AiOutlineCaretDown />
                 {dropdown && <Dropdown />}
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link to="/" classname="nav-links" onClick={closeMenu}>
-                Collections
               </Link>
             </li>
           </ul>
