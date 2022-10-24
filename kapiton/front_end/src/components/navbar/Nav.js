@@ -62,9 +62,33 @@ const Nav = () => {
             </li>
           </ul>
 
-          <a href="/">Collections</a>
-          <a href="/">Stores</a>
-          <a href="/">Contact</a>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" classname="nav-links" onClick={closeMenu}>
+                Collections <AiOutlineCaretDown />
+                {/* {dropdown && <Dropdown />} */}
+              </Link>
+            </li>
+          </ul>
+
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" classname="nav-links" onClick={closeMenu}>
+                Stores <AiOutlineCaretDown />
+                {/* {dropdown && <Dropdown />} */}
+              </Link>
+            </li>
+          </ul>
+
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" classname="nav-links" onClick={closeMenu}>
+                Contact <AiOutlineCaretDown />
+                {/* {dropdown && <Dropdown />} */}
+              </Link>
+            </li>
+          </ul>
+
           <div className="cart-container">
             <Link to="/cart" className="nav-link">
               <AiOutlineShoppingCart />

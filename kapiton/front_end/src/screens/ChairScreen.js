@@ -51,8 +51,11 @@ const ChairScreen = () => {
         <Link to="/tables">
           <BsArrowLeft className="back-icon-chairs" />
         </Link>
-
         <h2 className="chairs-title">Chairs</h2>
+        <Link to="/sofas">
+          <BsArrowRight className="front-icon-sofas" />
+        </Link>
+
         <div className="chairs">
           {loading ? (
             <LoadingBox />

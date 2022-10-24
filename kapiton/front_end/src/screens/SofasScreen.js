@@ -57,7 +57,7 @@ const SofasScreen = () => {
   return (
     <div>
       <main className="main-container">
-        <Link to="/">
+        <Link to="/chairs">
           <BsArrowLeft className="back-icon-sofas" />
         </Link>
 

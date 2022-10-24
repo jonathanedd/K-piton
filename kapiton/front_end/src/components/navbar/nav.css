@@ -26,6 +26,9 @@
   justify-content: space-evenly;
 }
 
+.nav-item {
+  list-style: none;
+}
 .products {
   text-decoration: none;
   color: aliceblue;
