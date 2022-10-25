@@ -1,7 +1,12 @@
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.466);
+  background-color: rgba(0, 0, 0, 0.604);
   border-radius: 0.5rem;
-  /* width: 150px; */
-  padding: 0.8rem;
   list-style: none;
+  position: absolute;
+  padding: 0.8rem;
+  width: 130px;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem;
 }

@@ -34,10 +34,11 @@ function App() {
             <Route path="/signin" element={<SigninScreen />}></Route>
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
   );
 }
 
 export default App;
+

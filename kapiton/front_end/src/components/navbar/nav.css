@@ -28,6 +28,7 @@
 
 .nav-item {
   list-style: none;
+  cursor: pointer;
 }
 .products {
   text-decoration: none;

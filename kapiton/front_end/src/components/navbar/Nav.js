@@ -7,10 +7,14 @@ import { AiOutlineShoppingCart, AiOutlineCaretDown } from "react-icons/ai";
 
 // import { Button } from "../button/Button";
 import Dropdown from "../dropdown/Dropdown";
+import DropCollections from "../dropdown/DropCollections";
+import DropStores from "../dropdown/DropStores";
 
 const Nav = () => {
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  const [dropDown, setDropdown] = useState(false);
+  const [dropColl, setDropColl] = useState(false);
+  const [dropStores, setDropStores] = useState(false);
 
   const { state } = useContext(Store);
   const { cart } = state;
@@ -19,10 +23,11 @@ const Nav = () => {
     setClick(!click);
   };
 
-  const closeMenu = () => {
-    setClick(false);
-  };
+  // const closeMenu = () => {
+  //   setClick(false);
+  // };
 
+  //PRODUCTS
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -36,6 +41,41 @@ const Nav = () => {
       setDropdown(false);
     } else {
       setDropdown(false);
+    }
+  };
+
+  //COLLECTIONS
+
+  const onMouseColl = () => {
+    if (window.innerWidth < 960) {
+      setDropColl(false);
+    } else {
+      setDropColl(true);
+    }
+  };
+
+  const onMouseLeaveColl = () => {
+    if (window.innerWidth < 960) {
+      setDropColl(false);
+    } else {
+      setDropColl(false);
+    }
+  };
+
+  //STORES
+  const onMouseStores = () => {
+    if (window.innerWidth < 960) {
+      setDropStores(false);
+    } else {
+      setDropStores(true);
+    }
+  };
+
+  const onMouseLeaveStores = () => {
+    if (window.innerWidth < 960) {
+      setDropStores(false);
+    } else {
+      setDropStores(false);
     }
   };
 
@@ -55,38 +95,37 @@ const Nav = () => {
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
             >
-              <Link to="/" classname="nav-links" onClick={closeMenu}>
-                Products <AiOutlineCaretDown />
-                {dropdown && <Dropdown />}
-              </Link>
+              {/* <Link to="/" classname="nav-links" onClick={closeMenu}> */}
+              Products <AiOutlineCaretDown />
+              {dropDown && <Dropdown />}
+              {/* </Link> */}
             </li>
           </ul>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" classname="nav-links" onClick={closeMenu}>
-                Collections <AiOutlineCaretDown />
-                {/* {dropdown && <Dropdown />} */}
-              </Link>
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseColl}
+              onMouseLeave={onMouseLeaveColl}
+            >
+              Collections <AiOutlineCaretDown />
+              {dropColl && <DropCollections />}
             </li>
           </ul>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" classname="nav-links" onClick={closeMenu}>
-                Stores <AiOutlineCaretDown />
-                {/* {dropdown && <Dropdown />} */}
-              </Link>
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseStores}
+              onMouseLeave={onMouseLeaveStores}
+            >
+              Stores <AiOutlineCaretDown />
+              {dropStores && <DropStores />}
             </li>
           </ul>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" classname="nav-links" onClick={closeMenu}>
-                Contact <AiOutlineCaretDown />
-                {/* {dropdown && <Dropdown />} */}
-              </Link>
-            </li>
+            <li className="nav-item">Contact</li>
           </ul>
 
           <div className="cart-container">
