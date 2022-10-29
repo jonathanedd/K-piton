@@ -1,13 +1,13 @@
 import express from "express";
 import data from "../data.js";
-import Product from "../models/products.model.js";
+import Sofa from "../models/sofas.model.js";
 
 const seedRouter = express.Router();
 
 seedRouter.get("/", async (req, res) => {
-  await Product.remove({});
-  const createdProducts = await Product.insertMany(data.sofas);
-  res.send({ createdProducts });
+  await Sofa.remove({});
+  const createdSofas = await Sofa.insertMany(data.sofas);
+  res.send({ createdSofas });
 });
 
 export default seedRouter;

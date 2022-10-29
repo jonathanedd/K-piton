@@ -3,6 +3,7 @@ import data from "./data.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seed.routes.js";
+import sofasRouter from "./routes/sofas.routes.js";
 
 dotenv.config();
 
@@ -20,27 +21,11 @@ const app = express();
 app.use("/api/seed", seedRouter);
 
 //Sofas api request
-app.get("/api/sofas", (req, res) => {
-  res.send(data.sofas);
-});
+// app.get("/api/sofas", (req, res) => {
+//   res.send(data.sofas);
+// });
 
-app.get("/api/sofas/slug/:slug", (req, res) => {
-  const sofa = data.sofas.find((x) => x.slug === req.params.slug);
-  if (sofa) {
-    res.send(sofa);
-  } else {
-    res.status(404).send({ message: "Product not found" });
-  }
-});
-
-app.get("/api/sofas/:id", (req, res) => {
-  const sofa = data.sofas.find((x) => x._id === req.params.id);
-  if (sofa) {
-    res.send(sofa);
-  } else {
-    res.status(404).send({ message: "Product not found" });
-  }
-});
+app.use("/api/sofas", sofasRouter);
 
 //api chairs request
 app.get("/api/chairs", (req, res) => {
