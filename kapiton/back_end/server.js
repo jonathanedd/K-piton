@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seed.routes.js";
 import sofasRouter from "./routes/sofas.routes.js";
+import userRouter from "./routes/users.routes.js";
 
 dotenv.config();
 
@@ -18,14 +19,20 @@ mongoose
 
 const app = express();
 
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/seed", seedRouter);
 
-//Sofas api request
-// app.get("/api/sofas", (req, res) => {
-//   res.send(data.sofas);
-// });
-
 app.use("/api/sofas", sofasRouter);
+
+app.use("/api/users", userRouter);
+
+//ERROR HANDLER FOR EXPRESS
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
 
 //api chairs request
 app.get("/api/chairs", (req, res) => {
