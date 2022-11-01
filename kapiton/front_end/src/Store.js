@@ -4,7 +4,7 @@ export const Store = createContext();
 const initialState = {
   cart: {
     cartItems: localStorage.getItem("cartItems")
-      ? JSON.parse(localStorage.getItem('cartItems'))
+      ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
   },
 };
@@ -33,14 +33,8 @@ function reducer(state, action) {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     }
-
-    // return {
-    //   ...state,
-    //   cart: {
-    //     ...state.cart,
-    //     cartItems: [...state.cart.cartItems, action.payload],
-    //   },
-    // };
+    case "USER:SIGIN":
+      return { ...state, userInfo: action.payload };
     default:
       return state;
   }

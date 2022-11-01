@@ -1,26 +1,56 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import Axios from "axios";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/signinscreen.css";
+import { Store } from "../Store.js";
 
 const SigninScreen = () => {
+  const navigate = useNavigate();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get("redirect");
   const redirect = redirectInUrl ? redirectInUrl : "/";
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await Axios.post("/api/users/signin", {
+        email,
+        password,
+      });
+      ctxDispatch({ type: "USER_SIGNIN", payload: data });
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      navigate(redirect || "/");
+    } catch (err) {
+      alert("Invalid credentials");
+    }
+  };
 
   return (
     <div className="small-container">
       <h1 className="my-3">Sign in</h1>
 
-      <form>
+      <form onSubmit={submitHandler}>
         <label>
           Email:
-          <input placeholder="Email" type="email" name="Email" required />
+          <input
+            placeholder="Email"
+            type="email"
+            name="Email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
           Password:
           <input
             placeholder="Password"
             type="password"
             name="Password"
             required
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <button className="sign-in" type="submit">
