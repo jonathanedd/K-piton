@@ -14,7 +14,7 @@ userRouter.post(
       //bcrypt.compareSync
       if ((req.body.password, user.password)) {
         res.send({
-          _id: user,
+          _id: user._id,
           name: user.name,
           email: user.email,
           isAdmin: user.isAdmin,

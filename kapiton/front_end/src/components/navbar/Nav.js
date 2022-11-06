@@ -4,6 +4,10 @@ import "../navbar/nav.css";
 import Badge from "react-bootstrap/esm/Badge";
 import { Store } from "../../Store";
 import { AiOutlineShoppingCart, AiOutlineCaretDown } from "react-icons/ai";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { LinkContainer } from "react-router-bootstrap";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import { Button } from "../button/Button";
 import Dropdown from "../dropdown/Dropdown";
@@ -16,8 +20,13 @@ const Nav = () => {
   const [dropColl, setDropColl] = useState(false);
   const [dropStores, setDropStores] = useState(false);
 
-  const { state } = useContext(Store);
-  const { cart } = state;
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
+  const signoutHandler = () => {
+    ctxDispatch({ type: "USER_SIGNOUT" });
+    localStorage.removeItem("userInfo");
+  };
 
   const handleClick = () => {
     setClick(!click);
@@ -45,7 +54,6 @@ const Nav = () => {
   };
 
   //COLLECTIONS
-
   const onMouseColl = () => {
     if (window.innerWidth < 960) {
       setDropColl(false);
@@ -82,6 +90,7 @@ const Nav = () => {
   return (
     <>
       <nav className="nav-container me-auto">
+        <ToastContainer position="bottom-center" limit={1} />
         <Link className="logo" to="/">
           Kapitoné
         </Link>
@@ -138,6 +147,27 @@ const Nav = () => {
               )}
             </Link>
           </div>
+          {userInfo ? (
+            <div>
+              Hello {userInfo.name}
+              <AiOutlineCaretDown />
+              <Link to="/profile">
+                <li>User Profile</li>
+              </Link>
+              <Link to="/orderhistory">
+                <li>Order History</li>
+              </Link>
+              <Link
+                className="dropdown-item"
+                to="#signout"
+                onClick={signoutHandler}
+              >
+                sign out
+              </Link>
+            </div>
+          ) : (
+            <Link to="/signin"> Sign in</Link>
+          )}
         </div>
       </nav>
     </>
