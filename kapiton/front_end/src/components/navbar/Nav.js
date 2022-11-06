@@ -148,25 +148,35 @@ const Nav = () => {
             </Link>
           </div>
           {userInfo ? (
-            <div>
-              Hello {userInfo.name}
-              <AiOutlineCaretDown />
-              <Link to="/profile">
-                <li>User Profile</li>
-              </Link>
-              <Link to="/orderhistory">
-                <li>Order History</li>
-              </Link>
-              <Link
-                className="dropdown-item"
-                to="#signout"
-                onClick={signoutHandler}
+            <>
+              <NavDropdown
+              className="user-name"
+                title={`Hello ${userInfo.name}`}
+                id="basic-nav-dropdown"
               >
-                sign out
-              </Link>
-            </div>
+                <LinkContainer to="/profile">
+                  <NavDropdown.Item>User Profile</NavDropdown.Item>
+                </LinkContainer>
+                <br />
+                <br />
+                <LinkContainer to="/orderhistory">
+                  <NavDropdown.Item>Order History</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Divider />
+                <Link
+                  className="dropdown-item"
+                  to="#signout"
+                  onClick={signoutHandler}
+                >
+                  Sign Out
+                </Link>
+              </NavDropdown>
+            </>
           ) : (
-            <Link to="/signin"> Sign in</Link>
+            <Link className="signin" to="/signin">
+              {" "}
+              Sign in
+            </Link>
           )}
         </div>
       </nav>
