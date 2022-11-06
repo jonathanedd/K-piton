@@ -12,6 +12,7 @@ import TableScreen from "./screens/TableScreen";
 import Footer from "./components/footer/Footer";
 import ChairInfo from "./screens/ChairInfo";
 import TableInfo from "./screens/TableInfo";
+import ShippingScreen from "./screens/ShippingScreen";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/table/:slug" element={<TableInfo />} />
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/signin" element={<SigninScreen />}></Route>
+            <Route path="/shipping" element={<ShippingScreen />}></Route>
           </Routes>
         </main>
         {/* <Footer /> */}
