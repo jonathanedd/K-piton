@@ -9,7 +9,7 @@ import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
 import ChairScreen from "./screens/ChairScreen";
 import TableScreen from "./screens/TableScreen";
-import Footer from "./components/footer/Footer";
+// import Footer from "./components/footer/Footer";
 import ChairInfo from "./screens/ChairInfo";
 import TableInfo from "./screens/TableInfo";
 import ShippingScreen from "./screens/ShippingScreen";

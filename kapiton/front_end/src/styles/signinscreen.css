@@ -10,14 +10,16 @@
 
 .form-signin {
   display: grid;
-  grid-template-columns: 50%;
+  grid-template-columns: 40%;
   justify-content: center;
 }
 
-input {
+.small-container input {
   border-radius: 0.4rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  width: 350px;
+  height: 2rem;
 }
 
 .sign-in {

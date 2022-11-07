@@ -1,0 +1,15 @@
+.checkout-steps {
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15%;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #f08000;
+}

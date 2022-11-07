@@ -26,6 +26,7 @@ const Nav = () => {
   const signoutHandler = () => {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
+    // localStorage.removeItem("shippingAddress");
   };
 
   const handleClick = () => {
@@ -150,7 +151,7 @@ const Nav = () => {
           {userInfo ? (
             <>
               <NavDropdown
-              className="user-name"
+                className="user-name"
                 title={`Hello ${userInfo.name}`}
                 id="basic-nav-dropdown"
               >
