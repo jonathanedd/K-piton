@@ -8,7 +8,7 @@
   padding-top: 5rem;
 }
 
-form {
+.form-signin {
   display: grid;
   grid-template-columns: 50%;
   justify-content: center;

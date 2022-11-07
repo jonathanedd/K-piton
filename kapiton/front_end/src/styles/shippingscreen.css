@@ -1,0 +1,21 @@
+.small-container-shipping {
+  width: 600px;
+  margin: auto;
+  /* background-color: aqua; */
+  padding-bottom: 2rem;
+}
+
+.shipping-title {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.form-shipping {
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+}
+
+.small-container-shipping input {
+  width: 500px;
+}

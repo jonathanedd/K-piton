@@ -42,7 +42,7 @@ const SigninScreen = () => {
     <div className="small-container">
       <h1 className="my-3">Sign in</h1>
 
-      <form onSubmit={submitHandler}>
+      <form className="form-signin" onSubmit={submitHandler}>
         <label>
           Email:
           <input

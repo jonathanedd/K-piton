@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import "../styles/shippingscreen.css";
+
 export default function ShippingScreen() {
   const [fullName, setFullName] = useState("");
   const [address, setAddress] = useState("");
@@ -15,60 +17,61 @@ export default function ShippingScreen() {
   };
 
   return (
-    <div>
-      <h1 className="my-3">Shipping address</h1>
-      <Form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="fullName">
-          <Form.Label>full Name</Form.Label>
-          <Form.Control
+    <div className="small-container-shipping">
+      <h1 className="shipping-title">Shipping address</h1>
+
+      <form className='form-shipping' onSubmit={submitHandler}>
+        <label>
+          Full name
+          <input
+            type="name"
+            name="full name"
+            required
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            required
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="fullName">
-          <Form.Label>Address</Form.Label>
-          <Form.Control
+          Address
+          <input
+            type="address"
+            name="Address"
+            required
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            required
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="fullName">
-          <Form.Label>City</Form.Label>
-          <Form.Control
+          city
+          <input
+            type="city"
+            name="City"
+            required
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            required
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="fullName">
-          <Form.Label>Postal code</Form.Label>
-          <Form.Control
+          Postal Code
+          <input
+            type="postal code"
+            name="Postal code"
+            required
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
-            required
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="fullName">
-          <Form.Label>Country</Form.Label>
-          <Form.Control
+          Country
+          <input
+            type="country"
+            name="Country"
+            required
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            required
           />
-        </Form.Group>
+        </label>
 
         <div className="mb-3">
           <Button variant="primary" type="submit">
             continue
           </Button>
         </div>
-      </Form>
+      </form>
+
+      <Form onSubmit={submitHandler}></Form>
     </div>
   );
 }
