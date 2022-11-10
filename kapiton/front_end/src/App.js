@@ -14,6 +14,7 @@ import ChairInfo from "./screens/ChairInfo";
 import TableInfo from "./screens/TableInfo";
 import ShippingScreen from "./screens/ShippingScreen";
 import SignupScreen from "./screens/SignupScreen";
+import PaymentMethod from "./screens/PaymentMethod";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/signin" element={<SigninScreen />}></Route>
             <Route path="/signup" element={<SignupScreen />}></Route>
             <Route path="/shipping" element={<ShippingScreen />}></Route>
+            <Route path="/payment" element={<PaymentMethod />}></Route>
           </Routes>
         </main>
         {/* <Footer /> */}

@@ -27,6 +27,7 @@ const Nav = () => {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
     // localStorage.removeItem("shippingAddress");
+    localStorage.removeItem("paymentMethod");
   };
 
   const handleClick = () => {
