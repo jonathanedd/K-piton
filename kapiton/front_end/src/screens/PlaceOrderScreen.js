@@ -15,7 +15,7 @@ export default function PlaceOrderScreen() {
   return (
     <div>
       <CheckOutSteps step1 step2 step3 step4></CheckOutSteps>
-      <h1>Place order</h1>
+      <h1>Preview order</h1>
       <Row>
         <Col md={8}>
           <Card>
@@ -29,6 +29,44 @@ export default function PlaceOrderScreen() {
                 {cart.shippingAddress.country}
               </Card.Text>
               <Link to="/shipping">Edit</Link>
+            </Card.Body>
+          </Card>
+
+          <Card className="mb-4">
+            <Card.Body>
+              <Card.Title>Payment</Card.Title>
+              <Card.Text>
+                <strong>Method:</strong> {cart.paymentMethod}
+              </Card.Text>
+              <Link to="/payment">Edit</Link>
+            </Card.Body>
+          </Card>
+
+          <Card>
+            <Card.Body>
+              <Card.Title>Items</Card.Title>
+              <ListGroup variant="flush">
+                {cart.cartItems.map((item) => (
+                  <ListGroup.Item key={item._id}>
+                    <Row className="align-items-center">
+                      <Col>
+                        <img
+                          width="200px"
+                          src={item.image}
+                          alt={item.name}
+                          className="img-fluid- rounded img-thumbnail"
+                        />
+                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                      </Col>
+                      <Col md={3}>
+                        {" "}
+                        <span>{item.quantity}</span>
+                      </Col>
+                      <Col md={3}>${item.price}</Col>
+                    </Row>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
             </Card.Body>
           </Card>
         </Col>
