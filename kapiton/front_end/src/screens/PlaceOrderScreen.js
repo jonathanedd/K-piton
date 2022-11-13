@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "../Store";
 import "../styles/placeorderscreen.css";
+import { BsCheck2, BsPaypal } from "react-icons/bs";
 
 export default function PlaceOrderScreen() {
   const navigate = useNavigate();
@@ -55,7 +56,10 @@ export default function PlaceOrderScreen() {
           <div className="payment-info">
             <h3>Payment info:</h3>
             <ul>
-              <li>{cart.paymentMethod}</li>
+              <li>
+                <BsPaypal fontSize="1.8rem" color="darkblue" />{" "}
+                {cart.paymentMethod}
+              </li>
             </ul>
             <button>
               <Link to="/payment">Edit</Link>
@@ -73,7 +77,8 @@ export default function PlaceOrderScreen() {
                 <li>
                   <span>{item.quantity}</span>
                 </li>
-                <li>${item.price}</li>
+                <li>${item.price} </li>
+                <BsCheck2 fontSize="1.8rem" color="green" />
               </ul>
             ))}
             <button>
