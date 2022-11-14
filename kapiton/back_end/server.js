@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import seedRouter from "./routes/seed.routes.js";
 import sofasRouter from "./routes/sofas.routes.js";
 import userRouter from "./routes/users.routes.js";
+import orderRouter from "./routes/order.routes.js";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.use("/api/seed", seedRouter);
 app.use("/api/sofas", sofasRouter);
 
 app.use("/api/users", userRouter);
+
+app.use("/api/orders", orderRouter);
 
 //ERROR HANDLER FOR EXPRESS
 app.use((err, req, res, next) => {

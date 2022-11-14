@@ -43,10 +43,11 @@ export default function PlaceOrderScreen() {
   cart.taxPrice = round2(0.15 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
-  const placeOrderHandler = () => {
+  const placeOrderHandler = async () => {
     try {
       dispatch({ type: "CREATE_REQUEST" });
-      const { data } = Axios.post(
+
+      const { data } = await Axios.post(
         "/api/orders",
         {
           orderItems: cart.cartItems,
@@ -120,7 +121,7 @@ export default function PlaceOrderScreen() {
           <div className="items">
             <h3>Items:</h3>
             {cart.cartItems.map((item) => (
-              <ul>
+              <ul key={item._id}>
                 <img src={item.image} alt={item.name} />
                 <li>
                   <Link to={`/product/${item.slug}`}>{item.name}</Link>
