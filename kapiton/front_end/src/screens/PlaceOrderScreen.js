@@ -1,4 +1,4 @@
-import Axios from "axios";
+import  Axios  from "axios";
 import React, { useEffect, useReducer } from "react";
 import CheckOutSteps from "../components/checkout/CheckoutSteps";
 import LoadingBox from "../components/loading-box/LoadingBox";
