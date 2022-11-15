@@ -6,6 +6,7 @@ import seedRouter from "./routes/seed.routes.js";
 import sofasRouter from "./routes/sofas.routes.js";
 import userRouter from "./routes/users.routes.js";
 import orderRouter from "./routes/order.routes.js";
+import chairRouter from "./routes/chairs.routes.js";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.use("/api/seed", seedRouter);
 
 app.use("/api/sofas", sofasRouter);
 
+// app.use("/api/chairs", chairRouter);
+
 app.use("/api/users", userRouter);
 
 app.use("/api/orders", orderRouter);
@@ -38,6 +41,7 @@ app.use((err, req, res, next) => {
 });
 
 //api chairs request
+
 app.get("/api/chairs", (req, res) => {
   res.send(data.chairs);
 });
