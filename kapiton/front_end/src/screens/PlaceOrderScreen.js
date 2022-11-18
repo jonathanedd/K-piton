@@ -1,4 +1,4 @@
-import  Axios  from "axios";
+import Axios from "axios";
 import React, { useEffect, useReducer } from "react";
 import CheckOutSteps from "../components/checkout/CheckoutSteps";
 import LoadingBox from "../components/loading-box/LoadingBox";
@@ -95,6 +95,7 @@ export default function PlaceOrderScreen() {
               </li>
               <li>
                 <strong>Address:</strong> {cart.shippingAddress.address},{" "}
+                {cart.shippingAddress.phoneNumber}
                 {cart.shippingAddress.city},{cart.shippingAddress.postalCode},{" "}
                 {cart.shippingAddress.country}
               </li>{" "}

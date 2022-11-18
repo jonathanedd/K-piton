@@ -20,6 +20,7 @@ export default function ShippingScreen() {
 
   const [fullName, setFullName] = useState(shippingAdress || "");
   const [address, setAddress] = useState(shippingAdress || "");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [city, setCity] = useState(shippingAdress || "");
   const [postalCode, setPostalCode] = useState(shippingAdress || "");
   const [country, setCountry] = useState(shippingAdress || "");
@@ -38,6 +39,7 @@ export default function ShippingScreen() {
       payload: {
         fullName,
         address,
+        phoneNumber,
         city,
         postalCode,
         country,
@@ -73,6 +75,14 @@ export default function ShippingScreen() {
               required
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+            />
+            Phone number
+            <input
+              type="Phone"
+              name="Phone number"
+              required
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
             />
             city
             <input
