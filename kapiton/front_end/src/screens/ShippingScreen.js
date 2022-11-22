@@ -15,15 +15,15 @@ export default function ShippingScreen() {
 
   const {
     userInfo,
-    cart: { shippingAdress },
+    cart: { shippingAddress: shippingAddress },
   } = state;
 
-  const [fullName, setFullName] = useState(shippingAdress || "");
-  const [address, setAddress] = useState(shippingAdress || "");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [city, setCity] = useState(shippingAdress || "");
-  const [postalCode, setPostalCode] = useState(shippingAdress || "");
-  const [country, setCountry] = useState(shippingAdress || "");
+  const [fullName, setFullName] = useState(shippingAddress.fullName || "");
+  const [address, setAddress] = useState(shippingAddress.address || "");
+  const [phoneNumber, setPhoneNumber] = useState(shippingAddress.phoneNumber || "");
+  const [city, setCity] = useState(shippingAddress.city || "");
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode || "");
+  const [country, setCountry] = useState(shippingAddress.country || "");
 
   //This fixes shipping form into sign in if user is sign out
   useEffect(() => {
@@ -47,7 +47,14 @@ export default function ShippingScreen() {
     });
     localStorage.setItem(
       "shippingAddress",
-      JSON.stringify({ fullName, address, city, postalCode, country })
+      JSON.stringify({
+        fullName,
+        address,
+        phoneNumber,
+        city,
+        postalCode,
+        country,
+      })
     );
     navigate("/payment");
   };

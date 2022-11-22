@@ -70,8 +70,9 @@ export default function OrderScreen() {
           <li>
             <strong>Name:</strong> {order.shippingAddress.fullName} <br />
             <strong>Address: </strong>
-            {order.shippingAddress.address},{order.shippingAddress.city},{" "}
-            {order.shippingAddress.postalCode},{order.shippingAddress.country}
+            {order.shippingAddress.address},{order.shippingAddress.phoneNumber},
+            {order.shippingAddress.city}, {order.shippingAddress.postalCode},
+            {order.shippingAddress.country}
           </li>
         </ul>
       </div>
@@ -114,5 +115,5 @@ export default function OrderScreen() {
         </ul>
       </div>
     </div>
-  ); 
+  );
 }
