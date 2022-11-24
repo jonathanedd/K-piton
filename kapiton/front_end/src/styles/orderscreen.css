@@ -1,0 +1,51 @@
+.order-container {
+  display: grid;
+  grid-template-columns: 50% 20% 30%;
+  width: 90%;
+  margin: auto;
+}
+
+h1 {
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.shipping-box {
+  border: 0.5px solid rgba(0, 0, 0, 0.331);
+  height: 150px;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.shipping-box li {
+  list-style: none;
+}
+
+.method-box {
+  border: 0.5px solid rgba(0, 0, 0, 0.331);
+  height: 150px;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.method-box li {
+  list-style: none;
+}
+
+.order-summary-box {
+  border: 0.5px solid rgba(0, 0, 0, 0.331);
+  height: 150px;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.order-summary-box li {
+  list-style: none;
+}
+
+.cart-items-box {
+  width: 90%;
+  margin: auto;
+  border: 0.5px solid rgba(0, 0, 0, 0.331);
+  margin-top: 1rem;
+  display: grid;
+}

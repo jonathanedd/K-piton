@@ -7,6 +7,8 @@ import MessageBox from "../components/message_box/MessageBox";
 import { Store } from "../Store";
 import { getError } from "../utils";
 
+import "../styles/orderscreen.css";
+
 function reducer(state, action) {
   switch (action.type) {
     case "FETCH_REQUEST":
@@ -61,37 +63,50 @@ export default function OrderScreen() {
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
-    <div>
+    <>
       <h1>Order number: {orderId}</h1>
+      <div className="order-container">
+        <div className="shipping-box">
+          <h3>Shipping</h3>
+          <ul>
+            <li>
+              <strong>Name:</strong> {order.shippingAddress.fullName} <br />
+              <strong>Address: </strong>
+              {order.shippingAddress.address},{order.shippingAddress.city},{" "}
+              {order.shippingAddress.postalCode},{order.shippingAddress.country}
+              , <br />
+              <strong>Phone number:</strong>
+              {order.shippingAddress.phoneNumber}
+            </li>
+          </ul>
+        </div>
 
-      <div>
-        <h3>Shipping</h3>
-        <ul>
-          <li>
-            <strong>Name:</strong> {order.shippingAddress.fullName} <br />
-            <strong>Address: </strong>
-            {order.shippingAddress.address},{order.shippingAddress.phoneNumber},
-            {order.shippingAddress.city}, {order.shippingAddress.postalCode},
-            {order.shippingAddress.country}
-          </li>
-        </ul>
+        <div className="method-box">
+          <h3>Method</h3>
+          <ul>
+            <li>
+              {order.paymentMethod}
+              {order.isPaid ? (
+                <span>Paid at {order.paidAt}</span>
+              ) : (
+                <span> Not Paid</span>
+              )}
+            </li>
+          </ul>
+        </div>
+
+        <div className="order-summary-box">
+          <h3>Order summary</h3>
+          <ul>
+            <li>Price: ${order.itemsPrice}</li>
+            <li>Shipping: ${order.shippingPrice}</li>
+            <li>Tax: ${order.taxPrice}</li>
+            <strong>Total: ${order.totalPrice}</strong>
+          </ul>
+        </div>
       </div>
 
-      <div>
-        <h3>Method</h3>
-        <ul>
-          <li>
-            {order.paymentMethod}
-            {order.isPaid ? (
-              <span>Paid at {order.paidAt}</span>
-            ) : (
-              <span> Not Paid</span>
-            )}
-          </li>
-        </ul>
-      </div>
-
-      <div>
+      <div className="cart-items-box">
         <h3>Cart items:</h3>
         <ul>
           {order.orderItems.map((item) => (
@@ -103,17 +118,6 @@ export default function OrderScreen() {
           ))}
         </ul>
       </div>
-
-      <div>
-        <h3>Order summary</h3>
-        <ul>
-          <h4>Items:</h4>
-          <li>Price: ${order.itemsPrice}</li>
-          <li>Shipping: ${order.shippingPrice}</li>
-          <li>Tax: ${order.taxPrice}</li>
-          <strong>Total: ${order.totalPrice}</strong>
-        </ul>
-      </div>
-    </div>
+    </>
   );
 }
